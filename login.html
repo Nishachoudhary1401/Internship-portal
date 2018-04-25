@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login Page</title>
+<style>
+
+body
+{
+	float: left;
+	width: 100%;
+	background-image: url("http://news.easyshiksha.com/wp-content/uploads/2016/05/DSCN7345.jpg") ;
+	background-repeat: no-repeat; 
+	padding: 0;
+}
+
+.full
+{
+	width: 100%;
+}
+
+.left
+{
+	width:50%;
+	float: left;
+	margin-left: 10%;	
+}
+
+.icon
+{
+	width: 100%;
+    	background-color: #555;
+    	overflow: auto;
+	float: left;
+	margin-left: 0;
+}
+
+.icon a 
+{
+	float: left;
+    	width: 10%;
+    	text-align: center;
+    	padding: 10px 0;
+    	color: white;
+    	font-size: 22px;
+	text-decoration: none;
+}
+
+.icon a:hover 
+{
+	background-color: black;
+}
+
+a.active
+{
+	background-color: green;
+}
+a.visited
+{
+	background-color: green;
+}
+
+div.logincontainer 
+{
+	width: 356px;
+    	border: 1px solid;
+    	float: right;
+    	margin-top: 3%;
+	background-color: white;
+	margin-right: 1%;
+}
+
+header
+{
+	margin-top: 0;
+	padding: 1px;
+  	color: white;
+    	background-color: black;
+    	clear: left;
+    	text-align: center;
+	margin-top: 0;
+}
+
+article 
+{
+	margin-left: 0;
+    	border-left: 1px solid gray;
+    	padding: 1em;
+    	overflow: hidden;
+}
+
+
+
+input[type=text], input[type=password] 
+{
+	width: 100%;
+    	padding: 12px 20px;
+    	margin: 8px 0;
+    	display: inline-block;
+    	border: 1px solid #ccc;
+    	border-radius: 10px;
+    	box-sizing: border-box;
+}
+
+button 
+{
+	background-color: red;
+    	color: white;
+    	padding: 14px 20px;
+    	margin: 8px 0;
+    	border: none;
+    	cursor: pointer;
+    	width: 100%;
+}
+
+input[type=submit] 
+{
+	width: 100%;
+    	background-color: green;
+    	color: white;
+    	padding: 14px 20px;
+    	margin: 8px 0;
+    	border: none;
+    	border-radius: 4px;
+    	cursor: pointer;
+}
+
+
+input[type=submit]:hover 
+{
+	opacity: 0.8;
+}
+
+span.psw 
+{
+	float: right;
+    	padding-top: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+
+<header>	
+	<h1 href="home">INTERNSHIP@NCU</h1>
+</header>	
+
+<div class="icon">
+	<a href="#">Home</a> 
+	<a class="active" href="nikhil.html">Login</a>
+	<a href="#">About</a>
+	<a href="#">Contact us</a>
+</div>
+
+<div class="full">
+<div class="left">
+	<br>
+	<section>
+  		<img class="mySlides" src="https://aasi.org.in/wp-content/uploads/2017/05/aasi-Internship.jpg" style="width:100% ">
+  		<img class="mySlides" src="http://aecchandigarh.com/blog/wp-content/uploads/2016/04/find-internships-abroad-programs.jpg" style="width:100%">
+		<img class="mySlides" src="http://dubeat.com/wp-content/uploads/internship.jpg" style="width:100% ">
+	</section>
+</div>
+
+<div class="logincontainer " >
+	
+	<header>
+		<h1>Login</h1>
+	</header>
+	<article>
+		 <form action = "dashboard.html">
+			
+			<label for="uname">Username:</label><br>
+			<input type="text" id="uname" name="username" placeholder="username" required><br>
+			<label for="pass">Password:</label><br>
+			<input type="password" id="pass" name="password" placeholder="password" required><br>
+			<input type="submit" value="Login"><br><br>
+			<input type="checkbox" checked="checked"> Remember me
+			<span class="psw">Forgot <a href="password.html">password?</a></span>
+		</form>
+	</article>
+</div>
+</div>
+
+<script>
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+slideshow();
+
+function slideshow() 
+{
+	var i;
+    	var x = document.getElementsByClassName("mySlides");
+    	for (i = 0; i < x.length; i++) 
+	{
+       		x[i].style.display = "none";
+	}
+    	myIndex++;
+    	if (myIndex > x.length) 
+	{
+		myIndex = 1;
+	}
+    	x[myIndex-1].style.display = "block";
+    	setTimeout(slideshow, 3000);
+}
+</script>
+
+</body>
+</html>

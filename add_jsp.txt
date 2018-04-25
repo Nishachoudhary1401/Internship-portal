@@ -1,0 +1,50 @@
+<html>
+<head>
+</head>
+<body>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+
+<%
+String companyname = request.getParameter("company_name");
+String location = request.getParameter("location");
+String line1 = request.getParameter("line1");
+String line2 = request.getParameter("line2");
+String dept = request.getParameter("dept");
+String time = request.getParameter("time");
+String role = request.getParameter("role");
+String skills = request.getParameter("skills");
+String stipend = request.getParameter("stipend");
+
+if (!(user_id == null || user_id.isEmpty())) {
+
+String driverName = "com.mysql.jdbc.Driver";
+String connectionUrl = "jdbc:mysql://localhost:3306/";
+String dbName = "intern";
+String userId = "root";
+String password = "0000";
+try {
+Class.forName(driverName);
+} catch (ClassNotFoundException e) {
+e.printStackTrace();
+}
+Connection connection = null;
+Statement statement = null;
+try {
+connection = DriverManager.getConnection(
+connectionUrl + dbName, userId, password);
+statement st = connection.createStatement();
+
+String sql = "INSERT INTO resume (company,location,addline1,addline2,dept,time,role,skills,stipend) 
+		 VALUES('"+ company_name + "','" + location + "','" + line1 + "','" + line2 + "','" + dept + "','" + time + "','" + role + "','" + skills + "','" + stipend +"')";
+int flage = st.executeUpdate(sql);
+
+} catch (Exception e) {
+e.printStackTrace();
+}
+}
+%>
+</body>
+</html>

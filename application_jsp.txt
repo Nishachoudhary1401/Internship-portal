@@ -1,0 +1,45 @@
+<html
+<head>
+</head>
+<body>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+
+<%
+String reason = request.getParameter("reason");
+String time = request.getParameter("time");
+String month = request.getParameter("month");
+String date = request.getParameter("date");
+
+if (!(user_id == null || user_id.isEmpty())) {
+
+String driverName = "com.mysql.jdbc.Driver";
+String connectionUrl = "jdbc:mysql://localhost:3306/";
+String dbName = "intern";
+String userId = "root";
+String password = "0000";
+try {
+Class.forName(driverName);
+} catch (ClassNotFoundException e) {
+e.printStackTrace();
+}
+Connection connection = null;
+Statement statement = null;
+try {
+connection = DriverManager.getConnection(
+connectionUrl + dbName, userId, password);
+statement st = connection.createStatement();
+
+String sql = "INSERT INTO resume (reason,time,month,date) 
+		 VALUES('"+ reason + "','" + time + "','" + month + "','" + date +"')";
+int flage = st.executeUpdate(sql);
+
+} catch (Exception e) {
+e.printStackTrace();
+}
+}
+%>
+</body>
+</html>

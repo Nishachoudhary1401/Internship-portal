@@ -1,0 +1,161 @@
+
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>home</title>
+
+<style>
+
+
+body
+{
+	width: 100%;
+	background-image: url("http://news.easyshiksha.com/wp-content/uploads/2016/05/DSCN7345.jpg") ;
+	background-repeat: no-repeat; 
+	padding: 0;
+ }
+.main{
+        margin-top: 0;
+	padding: 1px;
+	font-family:"Lucida Console",monospace;
+  	color: white;
+    	background-color: black;
+    	clear: left;
+    	text-align: center;
+	margin-top: 0;
+}
+.right a
+{
+float: right;
+font-size: 22px;
+font-align: center;
+color: white;
+position: fixed;
+right:0px;
+top:85px;
+width: 10%;
+padding: 10px 0;
+text-decoration: none;
+}
+.right a:visited
+{
+color:white;
+text-decoration: none;
+}
+.right a:hover
+{
+color:white;
+background-color:red;
+text-decoration: none;
+}
+.link
+{
+	width: 100%;
+    	background-color: #555;
+    	overflow: auto;
+	float: left;
+	margin-left: 0;
+}
+
+.link a 
+{
+	float: left;
+    	width: 10%;
+    	text-align: center;
+    	color: white;
+	padding: 10px 0;
+    	font-size: 22px;
+	text-decoration: none;
+}
+.link a:hover 
+{
+	background-color: black;
+}
+.link a:active
+{
+	background-color: green;
+}
+.link a:visited
+{
+	background-color: green;
+}
+         
+</style>
+      
+</head>
+<body>
+<div class="main">
+<h1 href="login.html">INTERNSHIP@NCU</h1>
+</div>
+<div class="link">
+<a href= "admin.html">Home</a>		 
+</div>  
+<div class="right">
+<a href= "login.html">Logout</a>    
+</div>
+
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+
+<%
+String id = request.getParameter("userId");
+String driverName = "com.mysql.jdbc.Driver";
+String connectionUrl = "jdbc:mysql://localhost:3306/";
+String dbName = "intern";
+String userId = "root";
+String password = "0000";
+
+try {
+Class.forName(driverName);
+} catch (ClassNotFoundException e) {
+e.printStackTrace();
+}
+
+Connection connection = null;
+Statement statement = null;
+ResultSet resultSet = null;
+%>
+<h2 align="center"><font><strong>Applications</strong></font></h2>
+<table align="center" cellpadding="5" cellspacing="5" border="1">
+<tr>
+
+</tr>
+<tr bgcolor="#A52A2A">
+<td><b>Roll.no.</b></td>
+<td><b>Student Name</b></td>
+<td><b>Company</b></td>
+<td><b>Resume</b></td>
+<td><b>Appliaction</b></td>
+</tr>
+<%
+try{ 
+connection = DriverManager.getConnection(connectionUrl+dbName, userId, password);
+statement=connection.createStatement();
+String sql ="SELECT * FROM record";
+
+resultSet = statement.executeQuery(sql);
+while(resultSet.next()){
+%>
+<tr bgcolor="#DEB887">
+
+<td><%=resultSet.getString("id") %></td>
+<td><%=resultSet.getString("user_id") %></td>
+<td><%=resultSet.getString("password") %></td>
+<td><%=resultSet.getString("name") %></td>
+<td><%=resultSet.getString("email") %></td>
+
+</tr>
+
+<% 
+}
+
+} catch (Exception e) {
+e.printStackTrace();
+}
+%>
+</table>
+</body>	
+</html>

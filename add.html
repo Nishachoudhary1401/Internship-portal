@@ -1,0 +1,232 @@
+
+
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add internship</title>
+
+<style>
+
+
+body
+{
+	width: 100%;
+	background-image: url("http://news.easyshiksha.com/wp-content/uploads/2016/05/DSCN7345.jpg") ;
+	background-repeat: no-repeat; 
+	padding: 0;
+ }
+.main{
+        margin-top: 0;
+	padding: 1px;
+	font-family:"Lucida Console",monospace;
+  	color: white;
+    	background-color: black;
+    	clear: left;
+    	text-align: center;
+	margin-top: 0;
+}
+
+.right a
+{
+float: right;
+font-size: 22px;
+color: white;
+position: fixed;
+right:0px;
+top:85px;
+width: 10%;
+padding: 10px 0;
+text-decoration: none;
+}
+.right a:visited
+{
+color:white;
+text-decoration: none;
+}
+.right a:hover
+{
+color:white;
+background-color:red;
+text-decoration: none;
+}
+.link
+{
+	width: 100%;
+    	background-color: #555;
+    	overflow: auto;
+	float: left;
+	margin-left: 0;
+}
+
+.link a 
+{
+	float: left;
+    	width: 10%;
+    	text-align: center;
+    	color: white;
+	padding: 10px 0;
+    	font-size: 22px;
+	text-decoration: none;
+}
+.link a:hover 
+{
+	background-color: black;
+}
+.link a:active
+{
+	background-color: green;
+}
+.link a:visited
+{
+	background-color: black;
+}
+div.resume 
+{
+	border: 1px solid;
+    	margin:0 auto;
+	width: 1000px;
+	margin-top: 2%;
+}
+
+header
+{
+	margin-top: 0;
+	padding: 1px;
+  	color: white;
+    	background-color: black;
+    	clear: left;
+    	text-align: center;
+	margin-top: 0;
+}
+
+article 
+{	margin-top: 2%;
+	height: 390px;
+	margin: 0 auto;
+    	border-left: 1px solid gray;
+    	padding: 1em;
+    	overflow: auto;
+        background-color: white;
+}
+
+
+
+input[type=text] 
+{       width: 100%;
+	padding: 12px 20px;
+    	margin: 8px 0;
+    	display: inline-block;
+    	border: 1px solid #0074ff;
+        border-radius: 10px;
+    	box-sizing: border-box;
+}
+input:focus
+{
+border: 2px solid #0074ff
+}
+textarea
+{ border :1px solid #0074ff;
+ border-radius: 10px;
+}
+textarea:focus
+{ border :2px solid #0074ff
+}
+
+fieldset
+{
+border : 1px dashed #0074ff;
+}
+legend
+{ color:#0074ff;
+  font-weight:bolder;
+font-size:30px;
+font-variant:small-caps;
+  }
+span
+{
+color:gray;
+font-size:20px;
+font-variant:small-caps;
+}
+
+label
+{
+color : #004ca7;
+font-weight:bold;
+}
+         
+</style>
+      
+</head>
+<body>
+<div class="main">
+<h1 href="login.html">INTERNSHIP@NCU</h1>
+</div> 
+<div class="right">
+<a href= "login.html">Logout</a>    
+</div>
+<div class="resume">
+<header>
+<h1>Add Internship</h1>
+</header>
+<article>
+ <form>
+<fieldset>
+<legend><b>Company name :</b></legend>
+<input name="company_name" type="text" maxlength="70" style="width: 500px" /><br/>
+</fieldset>
+<fieldset>
+<legend><b>Location:</b></legend>
+<input name ="location" type="radio" value="office"> 
+<label for="office">Office</label>
+<input name ="location" type="radio" value="home"> 
+<label for="home">Work from home</label> 
+</fieldset>
+<fieldset>
+<legend><b>Address :</b></legend>
+<label for="line1">Address line 1</label><br />
+<input name="line1" type="text" maxlength="70" style="width: 500px" /><br/>
+<label for="line2">Address line 2</label><br />
+<input name="line2" type="text" maxlength="70" style="width: 500px" /></br>
+</fieldset>
+<fieldset>
+<legend><b>Department:</b></legend>
+<select name="dept">
+<option value ="computer">Computer sciences
+<option value ="electrical">Electrical
+<option value ="mechanical">Mechanical
+<option value ="management">Management
+<option value ="commerce">Commerce
+<option value ="civil">Civil
+<option value ="law">Law
+</fieldset>
+<fieldset>
+<legend><b>Time:</b></legend>
+<select name="time">
+<option value ="1m">1 month
+<option value ="2m">2 months
+<option value ="3m">3 months
+<option value ="4m">4 months
+<option value ="5m">5 months
+<option value ="6m">6 months
+</select></br></br>
+</fieldset></br></br>
+<fieldset>
+<label for="role">Responsibilities:</label></br></br>
+<textarea name="role" rows=6 cols=100> short description of the work required to be done</textarea>
+</fieldset>
+<fieldset>
+<legend><b>Skills:</b></legend>
+<textarea name="skills" rows=6 cols=100>skills required for the internship</textarea>
+</fieldset>
+<fieldset>
+<legend><b>Stipend:</b></legend>
+<input name="stipend" type="text" maxlength="10" style="width: 500px" /><br/></br>
+</fieldset>
+<input type="submit" value="Save and add another"><br><br>
+<input type="submit" value="Send Email "><br><br> 
+</form>
+</div>
+</body>	
+</html>

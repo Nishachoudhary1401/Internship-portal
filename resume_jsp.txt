@@ -1,0 +1,57 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+
+<%
+String firstname = request.getParameter("First_Name");
+String lastname = request.getParameter("Last_Name");
+String gender = request.getParameter("gender");
+String date = request.getParameter("date");
+String month = request.getParameter("month");
+String year = request.getParameter("year");
+String course = request.getParameter("course");
+String startyear = request.getParameter("start_year");
+String endyear = request.getParameter("end_year");
+String cgpa = request.getParameter("cgpa");
+String companyname = request.getParameter("company_name");
+String role = request.getParameter("role");
+String projectname = request.getParameter("project_name");
+String info = request.getParameter("info");
+String skill = request.getParameter("skill");
+String phone = request.getParameter("phone");
+String email = request.getParameter("email");
+
+if (!(user_id == null || user_id.isEmpty())) {
+
+String driverName = "com.mysql.jdbc.Driver";
+String connectionUrl = "jdbc:mysql://localhost:3306/";
+String dbName = "intern";
+String userId = "root";
+String password = "0000";
+try {
+Class.forName(driverName);
+} catch (ClassNotFoundException e) {
+e.printStackTrace();
+}
+Connection connection = null;
+Statement statement = null;
+try {
+connection = DriverManager.getConnection(
+connectionUrl + dbName, userId, password);
+statement st = connection.createStatement();
+
+String sql = "INSERT INTO resume (firstname,lastname,gender,date,month,year,course,startyear,endyear,cgpa,companyname,role,projectname,info,skill,phone,email) 
+		 VALUES('"+ First_Name + "','" + Last_Name + "','" + gender + "','" + date + "','" + month + "','" + year + "','" + course + "','" 
+                         + start_year + "','" + end_year + "','" + cgpa + "','" + company_name + "','" + role + "','" + project_name + "','" + 
+			info + "','" + skill + "','" + phone + "','" + email +"')";
+int flage = st.executeUpdate(sql);
+
+} catch (Exception e) {
+e.printStackTrace();
+}
+}
+%>
